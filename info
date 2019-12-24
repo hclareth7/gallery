@@ -1,0 +1,26 @@
+Installing nodejs lastest version 
+    * sudo curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+    * sudo sh -c "echo deb https://deb.nodesource.com/node_12.x bionic main > /etc/apt/sources.list.d/nodesource.list"
+    * sudo apt-get update
+    * sudo apt-get install nodejs
+
+- Solving this issue (Internal watch failed: ENOSPC: System limit for number of file watchers reached, watch '/home/hclareth7/myprojects/nodejs/gallery'):
+    * sudo sysctl fs.inotify.max_user_watches=582222 && sudo sysctl -p
+
+
+- Installing mongodb
+    * sudo apt install -y mongodb
+    * sudo systemctl status mongodb
+
+- Confiuring mongodb (Creating db, and user)
+    * mongo
+    * use gallery
+    * db.createUser(
+    {
+        user: "gallery_user",
+        pwd: "1234qwerAsd",
+        roles: [{ role: "readWrite", db: "gallery" }]
+    } )
+
+
+ 
