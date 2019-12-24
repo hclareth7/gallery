@@ -22,5 +22,8 @@ Installing nodejs lastest version
         roles: [{ role: "readWrite", db: "gallery" }]
     } )
 
+    //Database connection
+    DB_CONNECTION = mongodb://gallery_user:1234qwerAsd@127.0.0.1:27017/gallery
+
 
  
